@@ -1,0 +1,13 @@
+rootProject.name = 'client-java'
+
+include 'jedis'
+include 'jedisque'
+include 'test-disque'
+
+
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle"
+
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.isFile()
+}
